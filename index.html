@@ -5,49 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #667eea;
             --secondary: #764ba2;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
         }
-        
+
         .navbar {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        
+
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 100px 0;
-            text-align: center;
             min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-        
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -55,248 +39,187 @@
             text-align: center;
             color: var(--primary);
         }
-        
+
         .about-section {
             padding: 80px 0;
             background-color: #f8f9fa;
         }
-        
+
+        /* PROFILE IMAGE */
+        .profile-image-wrapper {
+            text-align: center;
+        }
+
+        .profile-image-wrapper img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+        }
+
         .portfolio-section {
             padding: 80px 0;
         }
-        
+
         .portfolio-card {
-            background: white;
-            border: none;
             border-radius: 10px;
-            overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
+            transition: 0.3s;
         }
-        
+
         .portfolio-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
-        
+
         .portfolio-card-img {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
         }
-        
+
         .contact-section {
             padding: 80px 0;
             background-color: #f8f9fa;
         }
-        
+
         .footer {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 40px 0;
             text-align: center;
         }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border: none;
-            padding: 10px 30px;
-            font-weight: 600;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            line-height: 50px;
-            margin: 0 10px;
-            color: white;
-            transition: 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: rgba(255,255,255,0.4);
-            color: white;
-        }
     </style>
+
     <title>Ryan Rojo</title>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">Portfolio</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container">
+        <h1>RYAN ROJO</h1>
+        <p>Web Developer & Designer</p>
+        <a href="#portfolio" class="btn btn-light btn-lg">View My Work</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <div class="profile-image-wrapper">
+                    <!-- ADD YOUR IMAGE HERE -->
+                    <img src="images/profile.jpg" alt="Ryan Rojo">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <p class="lead">
+Hello! I'm Ryan Rojo, an Ambassador of PHINMA University of Iloilo and a 3rd Year College student.
+</p>
+<p>
+I am currently taking up Bachelor of Science in Information Technology (BSIT). 
+I am passionate about web development and enjoy creating modern, responsive, and user-friendly websites. 
+As a student ambassador, I also value leadership, communication, and teamwork while continuously improving my technical skills.
+</p>
+
+
+                <h5>Skills:</h5>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>Responsive Design</li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container text-center">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Full Stack Developer & Creative Thinker</p>
-            <a href="#portfolio" class="btn btn-light btn-lg">View My Work</a>
-        </div>
-    </section>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4">
-                    <div class="profile-image-wrapper">
-                        <img src="img/ryan.jpg" alt="Profile Picture" class="profile-image">
-                     </div>
-                    <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); width: 200px; height: 200px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                        <i class="fas fa-user"></i>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="portfolio-card">
+                    <div class="portfolio-card-img"><i class="fas fa-laptop-code"></i></div>
+                    <div class="p-4">
+                        <h5>Web Application</h5>
+                        <p>Modern responsive website.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="lead">Hello! I'm a passionate developer with expertise in building modern web applications.</p>
-                    <p>I love creating beautiful, functional websites and applications that solve real-world problems. With a strong foundation in web technologies and a keen eye for design, I'm dedicated to delivering high-quality solutions.</p>
-                    <div class="mt-4">
-                        <h5>Skills:</h5>
-                        <div class="row">
-                            <div class="col-6">
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check text-primary"></i> HTML & CSS</li>
-                                    <li><i class="fas fa-check text-primary"></i> JavaScript</li>
-                                    <li><i class="fas fa-check text-primary"></i> Bootstrap</li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check text-primary"></i> Responsive Design</li>
-                                    <li><i class="fas fa-check text-primary"></i> UI/UX Design</li>
-                                    <li><i class="fas fa-check text-primary"></i> Web Development</li>
-                                </ul>
-                            </div>
-                        </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="portfolio-card">
+                    <div class="portfolio-card-img"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="p-4">
+                        <h5>Mobile Design</h5>
+                        <p>Mobile-first layouts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="portfolio-card">
+                    <div class="portfolio-card-img"><i class="fas fa-paint-brush"></i></div>
+                    <div class="p-4">
+                        <h5>UI Design</h5>
+                        <p>Clean modern UI.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-card">
-                        <div class="portfolio-card-img">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Web Application</h5>
-                            <p class="card-text">A modern web application built with HTML, CSS, and JavaScript featuring responsive design.</p>
-                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-card">
-                        <div class="portfolio-card-img">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Mobile Design</h5>
-                            <p class="card-text">Responsive mobile-first designs that work seamlessly across all devices and screen sizes.</p>
-                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-card">
-                        <div class="portfolio-card-img">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="card-title">UI Design</h5>
-                            <p class="card-text">Beautiful user interface designs with focus on user experience and modern aesthetics.</p>
-                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="col-lg-8 mx-auto">
+            <input class="form-control mb-3" placeholder="Name">
+            <input class="form-control mb-3" placeholder="Email">
+            <textarea class="form-control mb-3" rows="5" placeholder="Message"></textarea>
+            <button class="btn btn-primary w-100">Send</button>
+        </form>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2025 Ryan Rojo</p>
+</footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="mb-3">
-                <h5>Follow Me</h5>
-                <div class="social-links">
-                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
